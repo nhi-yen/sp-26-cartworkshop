@@ -3,18 +3,23 @@ import Layout from "./components/Layout";
 import { CartProvider } from "./context/CartContext";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import ProductListPage from "./pages/ProductListPage";
+import CartPage from "./pages/CartPage/CartPage";
+import { CartProvider } from "./contexts/CartContext";
 
 export default function App() {
   return (
-    <CartProvider>
-      <BrowserRouter>
+    <BrowserRouter>
+      <CartProvider>
         <Routes>
           <Route element={<Layout />}>
             <Route index element={<ProductListPage />} />
             <Route path="products/:id" element={<ProductDetailPage />} />
+
+            {/* ⭐ Cart Page Route */}
+            <Route path="cart" element={<CartPage />} />
           </Route>
         </Routes>
-      </BrowserRouter>
-    </CartProvider>
+      </CartProvider>
+    </BrowserRouter>
   );
 }

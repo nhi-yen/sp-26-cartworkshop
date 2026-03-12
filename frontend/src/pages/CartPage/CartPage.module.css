@@ -1,0 +1,75 @@
+.cartPage {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.info h3 {
+  margin: 0;
+}
+
+.quantityControls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.quantityControls button {
+  padding: 0.25rem 0.5rem;
+  font-size: 1rem;
+}
+
+.quantity {
+  min-width: 1.5rem;
+  text-align: center;
+}
+
+.lineTotal {
+  font-weight: bold;
+}
+
+.remove {
+  background: none;
+  border: none;
+  color: #bb0000;
+  cursor: pointer;
+}
+
+.summary {
+  margin-top: 2rem;
+  text-align: right;
+}
+
+.checkoutButton {
+  margin-top: 1rem;
+  padding: 0.75rem 1.25rem;
+  background: #bb0000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.empty {
+  text-align: center;
+  padding: 2rem;
+}
+
+.link {
+  color: #bb0000;
+  text-decoration: underline;
+}

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import type { ProductResponse } from "../types/product";
 import styles from "./ProductCard.module.css";
+import { AddToCartButton } from "./AddToCartButton/AddToCartButton";
 
 interface ProductCardProps {
   product: ProductResponse;
@@ -12,7 +13,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   return (
     <div className={styles.card}>
-      <Link to={`/products/${product.id}`} className={styles.cardLink}>
+      <Link to={`/products/${product.id}`} className={styles.linkArea}>
         <div className={styles.imageWrapper}>
           {product.imageUrl ? (
             <img
@@ -26,31 +27,23 @@ export default function ProductCard({ product }: ProductCardProps) {
             </div>
           )}
         </div>
+
         <div className={styles.body}>
           <span className={styles.category}>{product.categoryName}</span>
           <h3 className={styles.name}>{product.name}</h3>
           <p className={styles.price}>${product.price.toFixed(2)}</p>
         </div>
       </Link>
-      <div className={styles.cardActions}>
-        <button
-          className={styles.addToCartButton}
-          onClick={() =>
-            dispatch({
-              type: "ADD_TO_CART",
-              payload: {
-                productId: product.id,
-                productName: product.name ?? "Product",
-                price: product.price,
-                imageUrl: product.imageUrl ?? undefined,
-              },
-            })
-          }
-          aria-label={`Add ${product.name} to cart`}
-        >
-          Add to Cart
-        </button>
-      </div>
+
+      {/* ⭐ Add to Cart Button (outside the link) */}
+      <AddToCartButton
+        product={{
+          id: product.id,
+          name: product.name ?? "Product",
+          price: product.price,
+          imageUrl: product.imageUrl ?? undefined,
+        }}
+      />
     </div>
   );
 }
