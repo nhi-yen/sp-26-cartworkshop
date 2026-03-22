@@ -1,5 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
-import { useCart } from "../context/CartContext";
+import { useCart } from "../contexts/CartContext";
 import { CartSidebar } from "./CartSidebar/CartSidebar";
 import styles from "./Layout.module.css";
 import { CartBadge } from "./CartBadge/CartBadge";

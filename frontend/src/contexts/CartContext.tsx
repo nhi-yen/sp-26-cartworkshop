@@ -51,3 +51,6 @@ export function useCartContext() {
   }
   return context;
 }
+
+// Alias for backwards compatibility with component imports
+export const useCart = useCartContext;

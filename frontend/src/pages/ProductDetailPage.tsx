@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { fetchProduct, NotFoundError } from "../api/products";
-import { useCart } from "../context/CartContext";
+import { useCart } from "../contexts/CartContext";
 import type { ProductResponse } from "../types/product";
 import styles from "./ProductDetailPage.module.css";
 
